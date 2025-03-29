@@ -9,7 +9,7 @@ from sqlmodel import SQLModel
 from alembic import context
 
 from src.settings import settings
-from src import UserModel
+from src import User
 
 print(settings.model_dump())
 
