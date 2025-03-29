@@ -1,1 +1,1 @@
-from .main import app
+from .routers.user.models import UserModel

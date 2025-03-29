@@ -12,6 +12,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "alembic>=1.15.2",
     "black>=25.1.0",
     "mypy>=1.15.0",
     "python-lsp-server[all]>=1.12.2",

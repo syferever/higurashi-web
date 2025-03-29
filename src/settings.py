@@ -7,12 +7,15 @@ from pydantic_settings import (
     TomlConfigSettingsSource,
 )
 
+BASE_DIR = Path(__file__).parent.parent
+
 
 class Settings(BaseSettings):
     echo_sql: bool
+    db_uri: str = f"sqlite+aiosqlite:///{BASE_DIR / "data.db"}"
 
     model_config = SettingsConfigDict(
-        toml_file=Path(__file__).parent.parent / "settings.toml",
+        toml_file=BASE_DIR / "settings.toml",
     )
 
     @classmethod
@@ -29,4 +32,5 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
-print(settings.model_dump())
+if __name__ == "__main__":
+    print(settings.model_dump())
