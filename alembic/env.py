@@ -18,7 +18,7 @@ print(settings.model_dump())
 config = context.config
 
 config.set_section_option(
-    section=config.config_ini_section, name="DB_DSN", value=settings.db_uri
+    section=config.config_ini_section, name="DB_URI", value=settings.db_uri
 )
 
 # Interpret the config file for Python logging.
